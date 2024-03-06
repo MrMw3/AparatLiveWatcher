@@ -17,7 +17,7 @@ def main():
         raise Exception("Failed to initialize webdriver make sure you have right driver in program Path.")
 
     # TODO: get url from user
-    # url of live chat. ex: https://aparat.com/ana_ghaem/live/chat
+    # url of live chat. ex: https://aparat.com/tigo_blade/live/chat
     live_url = 'https://www.aparat.com/tigo_blade/live/chat'
     # it's time to check entered url validation
     if utilities.validate_url(live_url) is False:
@@ -53,7 +53,7 @@ def main():
 
         
     except Exception:
-        raise Exception("An error occur when trying to get url. make sure url is in right format. ex: https://aparat.com/ana_ghaem/live/chat")
+        raise Exception("An error occur when trying to get url. make sure url is in right format. ex: https://aparat.com/tigo_blade/live/chat")
 
     # Prevent console from being closed when driver do his job
     input()
