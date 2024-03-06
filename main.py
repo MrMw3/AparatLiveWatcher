@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import utilities
+import time
 
 def main():
     #initialize driver
@@ -12,7 +13,7 @@ def main():
 
     # TODO: get url from user
     # url of live chat. ex: https://aparat.com/ana_ghaem/live/chat
-    watcher_url = 'https://www.aparat.com/iLevitage/live/chat'
+    watcher_url = 'https://www.aparat.com/mehtiyt/live/chat'
     # it's time to check entered url validation
     if utilities.validate_url(watcher_url) is False:
         raise Exception("There is a problem with your entered link, check it and try again.")
@@ -23,11 +24,10 @@ def main():
         # i need the page source so check it's availability
 
         assert driver.page_source is not None or driver.page_source != ""
-        #TODO: clean this line, this is debug only
-        utilities.save_page_source(driver.page_source)
+        print("[+] Page Loaded Successfully.")
+
         # Prevent console from being closed when driver do his job
         input()
-
     except Exception:
         raise Exception("An error occur when trying to get url. make sure url is in right format. ex: https://aparat.com/ana_ghaem/live/chat")
 
