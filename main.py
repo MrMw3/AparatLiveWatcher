@@ -8,6 +8,13 @@ from AparatSoup import AparatSoup, Chat
 import time
 
 def main():
+
+    # url of live chat. ex: https://aparat.com/tigo_blade/live/chat
+    live_url = input('Enter Live Chat URl (ex: https://www.aparat.com/USERNAME/live/chat) : ')
+    # it's time to check entered url validation
+    if utilities.validate_url(live_url) is False:
+        raise Exception("There is a problem with your entered link, check it and try again.")
+    
     #initialize driver
     try:
         options = webdriver.EdgeOptions()
@@ -15,13 +22,6 @@ def main():
         driver = webdriver.Edge(options)
     except Exception:
         raise Exception("Failed to initialize webdriver make sure you have right driver in program Path.")
-
-    # TODO: get url from user
-    # url of live chat. ex: https://aparat.com/tigo_blade/live/chat
-    live_url = 'https://www.aparat.com/tigo_blade/live/chat'
-    # it's time to check entered url validation
-    if utilities.validate_url(live_url) is False:
-        raise Exception("There is a problem with your entered link, check it and try again.")
 
     # Go and get page source
     try:
