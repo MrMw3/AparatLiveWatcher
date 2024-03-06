@@ -4,4 +4,4 @@ Selenium based project with python to watch aparat.com live video and record use
 # Requirements
 
 ## Python: v3.11.8
-## Chrome: v114
+## Edge: v122
