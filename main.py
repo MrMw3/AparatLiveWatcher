@@ -13,6 +13,9 @@ def main():
     # TODO: get url from user
     # url of live chat. ex: https://aparat.com/ana_ghaem/live/chat
     watcher_url = 'https://www.aparat.com/iLevitage/live/chat'
+    # it's time to check entered url validation
+    if utilities.validate_url(watcher_url) is False:
+        raise Exception("There is a problem with your entered link, check it and try again.")
 
     # Go and get page source
     try:
