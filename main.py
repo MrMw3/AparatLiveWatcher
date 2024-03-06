@@ -8,7 +8,7 @@ def main():
     try:
         driver = webdriver.Edge()
     except Exception:
-        Exception("Failed to initialize webdriver make sure you have right driver in program Path.")
+        raise Exception("Failed to initialize webdriver make sure you have right driver in program Path.")
 
     # TODO: get url from user
     # url of live chat. ex: https://aparat.com/ana_ghaem/live/chat
@@ -20,12 +20,16 @@ def main():
     # Go and get page source
     try:
         driver.get(watcher_url)
-        # i need page source so check it's availability
-        assert driver.page_source is not None
+        # i need the page source so check it's availability
+
+        assert driver.page_source is not None or driver.page_source != ""
+        #TODO: clean this line, this is debug only
+        utilities.save_page_source(driver.page_source)
         # Prevent console from being closed when driver do his job
         input()
+
     except Exception:
-        Exception("An error occur when trying to get url. make sure url is in right format. ex: https://aparat.com/ana_ghaem/live/chat")
+        raise Exception("An error occur when trying to get url. make sure url is in right format. ex: https://aparat.com/ana_ghaem/live/chat")
 
 
 
