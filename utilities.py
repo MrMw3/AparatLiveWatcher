@@ -12,10 +12,10 @@ def validate_url(url):
     else:
         return False
     
-def save_page_source(page_source):
+def save_page_source(page_source, name):
     try:
         with open("logs/source.txt", "w", encoding='utf-8') as file:
             file.write(page_source)
-            print("[+] Page source saved in logs/source.txt Successfully/")
+            print("[+] Page source saved in logs/{name}.txt Successfully/")
     except Exception as ex:
         print(ex)
