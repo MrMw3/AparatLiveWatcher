@@ -19,3 +19,9 @@ def save_page_source(page_source, name):
             print(f"[+] Page source saved in logs/{name}.txt Successfully/")
     except Exception as ex:
         print(ex)
+
+def check_page_source(page_source):
+    if page_source is not None and page_source != "":
+        return True
+    else:
+        raise Exception("Page source can't be empty or null")
