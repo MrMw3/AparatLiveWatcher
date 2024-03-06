@@ -14,8 +14,8 @@ def validate_url(url):
     
 def save_page_source(page_source, name):
     try:
-        with open("logs/{name}.txt", "w", encoding='utf-8') as file:
+        with open(f"logs/{name}.txt", "w", encoding='utf-8') as file:
             file.write(page_source)
-            print("[+] Page source saved in logs/{name}.txt Successfully/")
+            print(f"[+] Page source saved in logs/{name}.txt Successfully/")
     except Exception as ex:
         print(ex)
