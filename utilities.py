@@ -16,5 +16,6 @@ def save_page_source(page_source):
     try:
         with open("logs/source.txt", encoding='utf-8') as file:
             file.write(page_source)
-    except Exception:
-        Exception()
+            print("[+] Page source saved in logs/source.txt Successfully/")
+    except Exception as ex:
+        print(ex)
