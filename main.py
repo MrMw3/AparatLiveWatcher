@@ -11,14 +11,14 @@ def main():
 
     # TODO: get url from user
     # url of live chat. ex: https://aparat.com/ana_ghaem/live/chat
-    watcher_url = 'https://www.aparat.com/mehtiyt/live/chat'
+    live_url = 'https://www.aparat.com/mehtiyt/live/chat'
     # it's time to check entered url validation
-    if utilities.validate_url(watcher_url) is False:
+    if utilities.validate_url(live_url) is False:
         raise Exception("There is a problem with your entered link, check it and try again.")
 
     # Go and get page source
     try:
-        driver.get(watcher_url)
+        driver.get(live_url)
         # i need the page source so check it's availability
 
         assert driver.page_source is not None or driver.page_source != ""
