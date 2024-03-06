@@ -53,7 +53,18 @@ class AparatSoup:
 class Chat():
     
     def __init__(self, user_name, message_text, replayed_to_username, replayed_to_message):
-        self.user_name = user_name
-        self.message_text = message_text
-        self.replayed_to_username = replayed_to_username
-        self.replayed_to_message = replayed_to_message
+        self.user_name = user_name or "Empty"
+        self.message_text = message_text or "Empty"
+        self.replayed_to_username = replayed_to_username or "Empty"
+        self.replayed_to_message = replayed_to_message or "Empty"
+
+    def __eq__(self, __value: object) -> bool:
+
+        if (self.user_name == __value.user_name and
+            self.message_text == __value.message_text and
+            self.replayed_to_message == __value.replayed_to_message and
+            self.replayed_to_username == __value.replayed_to_username):
+
+            return True
+        else:
+            return False
